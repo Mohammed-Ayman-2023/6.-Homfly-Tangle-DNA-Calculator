@@ -17,39 +17,6 @@ This repository is dedicated to exploring the intersection of **mathematics** an
 - **Biological:** Apply knot theory concepts to analyze and model DNA topology, focusing on supercoiling and recombination.
 - **Computational:** Create efficient and scalable computational methods for studying complex knots and tangles.
 
----
-
-## Repository Structure
-
-```
-Exploring-Knot-Theory-DNA/
-├── README.md              # Project documentation
-├── LICENSE                # Licensing information
-├── .gitignore             # Files and directories to ignore in version control
-├── data/
-│   ├── examples/          # Example knot diagrams and Dowker notation
-│   ├── processed/         # Processed data for analysis
-│   └── README.md
-├── scripts/
-│   ├── algorithms/        # Python scripts for knot polynomial calculations
-│   │   ├── homfly_calculator.py
-│   │   └── tangle_analysis.py
-│   ├── visualization/     # Scripts for visualizing knot structures
-│   └── README.md
-├── docs/
-│   ├── theory/            # Documentation on knot theory and its applications
-│   ├── figures/           # Diagrams and visual aids
-│   └── README.md
-├── results/
-│   ├── figures/           # Generated plots and figures
-│   ├── tables/            # Summary tables from analysis
-│   └── README.md
-└── references/
-    └── bibliography.bib   # BibTeX references for the project
-```
-
----
-
 ## Features
 
 ### 1. **Homfly Polynomial Calculator**
