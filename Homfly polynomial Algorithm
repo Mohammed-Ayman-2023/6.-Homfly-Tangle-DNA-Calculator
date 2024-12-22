@@ -1,46 +1,45 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
+# HOMFLY polynomial algorithm implementation
+def calculate_homfly_polynomial(dowker_notation, crossing_orientations):
+    """
+    Calculate the HOMFLY polynomial for a knot given its Dowker notation and crossing orientations.
 
-using namespace std;
+    Parameters:
+        dowker_notation (list of tuples): A list of pairs representing the Dowker notation.
+        crossing_orientations (list of int): A list of crossing orientations (+1 or -1).
 
-double calculatePolynomial(const vector<int>& dowker_code) {
-    int n = dowker_code.size();
-    int k = 0;
-    int components = 1;
-    double P = 1.0;
-    int prev_sign = 0;
+    Returns:
+        str: The HOMFLY polynomial as a string.
+    """
+    def recursive_homfly(dowker, orientations):
+        if not dowker:
+            # Base case: An empty diagram corresponds to the unknot
+            return "1"
+        
+        # Select a crossing to simplify
+        crossing = dowker[0]
+        remaining_dowker = dowker[1:]
+        orientation = orientations[0]
+        remaining_orientations = orientations[1:]
 
-    for (int i = 0; i < n; i++) {
-        if (dowker_code[i] == 0) {
-            continue;
-        }
+        # Simplify into L+ and L0
+        l_plus = recursive_homfly(remaining_dowker, remaining_orientations)
+        l_zero = recursive_homfly(remaining_dowker, remaining_orientations)
 
-        int sign = (dowker_code[i] > 0) ? 1 : -1;
-        if (i == 0 || sign != prev_sign) {
-            components++;
-        }
-        prev_sign = sign;
-        k++;
+        # Combine results using the HOMFLY recursion relation
+        if orientation == -1:
+            return f"v^-2 * ({l_plus}) - z * v^-1 * ({l_zero})"
+        else:
+            return f"v^2 * ({l_plus}) - z * v * ({l_zero})"
 
-        if (k == 0) {
-            P = 1.0;
-        } else if (k == 1) {
-            P = static_cast<double>(abs(dowker_code[i]));
-        } else {
-            P *= pow(static_cast<double>(abs(dowker_code[i])), n - 1) * pow(static_cast<double>(abs(dowker_code[i])), k);
-            if (sign == -1) {
-                P *= -1;
-            }
-        }
-    }
+    # Start recursive calculation
+    return recursive_homfly(dowker_notation, crossing_orientations)
 
-    return P;
-}
 
-int main() {
-    vector<int> dowker_code = {2, -3, 1, -1};
-    double result = calculatePolynomial(dowker_code);
-    cout << "P(L) = " << result << endl;
-    return 0;
-}حاسس ان كدا احسن 😂
+# Example usage
+if __name__ == "__main__":
+    # Example: Trefoil knot
+    dowker_notation = [(1, 4), (5, 2), (3, 6)]  # Trefoil knot Dowker notation
+    crossing_orientations = [-1, -1, -1]  # Orientation for each crossing
+
+    homfly_polynomial = calculate_homfly_polynomial(dowker_notation, crossing_orientations)
+    print(f"HOMFLY polynomial: {homfly_polynomial}")
