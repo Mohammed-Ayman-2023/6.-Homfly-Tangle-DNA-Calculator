@@ -68,31 +68,6 @@ Exploring-Knot-Theory-DNA/
 - Modeling DNA recombination and supercoiling using knot and tangle theory.
 - Understanding the role of topoisomerases and recombinases in modifying DNA topology.
 
----
-
-## Getting Started
-
-### Prerequisites
-To run the algorithms and scripts in this repository, ensure you have the following:
-- **Python 3.x** installed.
-- Required libraries: `numpy`, `matplotlib`, `networkx`.
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Exploring-Knot-Theory-DNA.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Exploring-Knot-Theory-DNA
-   ```
-3. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
----
-
 ## Usage
 
 ### **1. Computing the Homfly Polynomial**
@@ -113,42 +88,13 @@ Perform an analysis of tangle properties:
 python scripts/algorithms/tangle_analysis.py --tangle example_tangle.json
 ```
 
----
 
-## Documentation
-
-- **Theoretical Background:** Detailed explanations of knot invariants, Dowker notation, and tangle theory can be found in the `docs/theory/` folder.
-- **Figures and Visuals:** Illustrations of knots, tangles, and their mathematical properties are in `docs/figures/`.
-
----
-
-## Results
-
-The `results/` directory contains:
-- **Figures:** Graphs and knot visualizations.
-- **Tables:** Summarized results from computational experiments.
-
----
 
 ## Future Work
 
 - Extend the Homfly polynomial algorithm to handle larger and more complex knots.
 - Explore additional biological applications, including chromatin organization and knot-like structures in proteins.
 - Incorporate machine learning methods to predict knot properties from diagram inputs.
-
----
-
-## Contributions
-
-Contributions to this project are welcome! Please:
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes and open a pull request.
-
----
 
 ## License
 
@@ -157,15 +103,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Contact
-
-For questions or collaboration inquiries, please contact [your.email@example.com](mailto:your.email@example.com).
-
----
-
-## Acknowledgments
-
-This project draws inspiration from interdisciplinary research on knot theory and DNA topology. We thank all contributors and the mathematical biology community for their valuable insights.
-
----
-
-By following this structure, your `README.md` will not only be professional and comprehensive but also user-friendly, making it easy for others to navigate and contribute to your project.
+For any questions or contributions please contact: s-mohammed.elboghdadi@zewailcity.edu.eg 
